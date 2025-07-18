@@ -1,0 +1,13 @@
+<launch>
+    <启动turtlesim节点 >
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
+    
+    <加载参数文件 >
+    <rosparam file="$(find package2)/config/params.yaml" command="load"/>
+    
+    <启动自定义速度发布节点 >
+    <node pkg="package2" type="turtle_vel_pub.py" name="vel_publisher" output="screen"/>
+    
+    <启动控制器节点 >
+    <node pkg="package2" type="turtle_controller_node" name="controller" output="screen"/>
+</launch>

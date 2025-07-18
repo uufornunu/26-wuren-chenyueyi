@@ -1,0 +1,4 @@
+# 乌龟控制参数
+angular_velocity: 1.5    # 角速度 (rad/s)
+max_speed: 3.0           # 最大线速度 (m/s)
+min_speed: 0.5           # 最小线速度 (m/s)
