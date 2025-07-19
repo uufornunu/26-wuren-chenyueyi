@@ -94,6 +94,10 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package2" TYPE PROGRAM FILES "/home/chenyueyi/hw_ros_ws/build/package2/catkin_generated/installspace/cone_counter.py")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package2" TYPE PROGRAM FILES "/home/chenyueyi/hw_ros_ws/build/package2/catkin_generated/installspace/turtle_vel_pub.py")
 endif()
 

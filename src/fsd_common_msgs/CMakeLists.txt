@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 project(fsd_common_msgs)
-
+set(can_msgs_DIR "/opt/ros/noetic/share/can_msgs/cmake")  # 替换为实际路径[6,8](@ref)
 find_package(catkin REQUIRED COMPONENTS
   message_generation  # Needed to generate custom message types
   std_msgs

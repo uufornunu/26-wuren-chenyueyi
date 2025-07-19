@@ -5,7 +5,7 @@ from package2.msg import TurtleVel#自定义消息
 def publisher():
     rospy.init_node('turtle_vel_publisher', anonymous=True)#初始化节点，自动添加数，不然重复启动冲突
     pub = rospy.Publisher('/turtle_vel_cmd', TurtleVel, queue_size=10)#发布者对象
-    rate = rospy.Rate(1)  # 频率1Hz
+    rate = rospy.Rate(1)  # 频率1
     
     while not rospy.is_shutdown():#没有受到终止消息
         vel_msg = TurtleVel()#自定义消息对象

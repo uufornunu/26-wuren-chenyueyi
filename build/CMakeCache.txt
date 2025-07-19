@@ -379,9 +379,6 @@ _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/noetic/share/actionlib_msgs/cmake
 
-//The directory containing a CMake configuration file for can_msgs.
-can_msgs_DIR:PATH=/opt/ros/noetic/share/can_msgs/cmake
-
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 

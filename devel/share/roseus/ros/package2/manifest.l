@@ -5,6 +5,8 @@
 ;;  FROM /home/chenyueyi/hw_ros_ws/src/package2/package.xml (0.0.0)
 ;; USING /opt/ros/noetic/lib/python3/dist-packages/geneus/geneus_main.py /opt/ros/noetic/share/geneus/package.xml (3.0.0)
 ;;
+(ros::load-ros-package "can_msgs")
+(ros::load-ros-package "fsd_common_msgs")
 (ros::load-ros-package "geometry_msgs")
 (ros::load-ros-package "roscpp")
 (ros::load-ros-package "rosgraph_msgs")

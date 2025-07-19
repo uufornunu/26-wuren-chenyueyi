@@ -40,6 +40,10 @@ add_executable(turtle_controller_node  # 可执行文件名
   src/turtle_controller.cpp  # 源文件路径
 )
 
+catkin_install_python(
+  PROGRAMS scripts/cone_counter.py  # 声明可执行文件
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 # 链接库文件
 target_link_libraries(turtle_controller_node
   ${catkin_LIBRARIES}  # ROS相关库

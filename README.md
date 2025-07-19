@@ -1,26 +1,34 @@
 https://github.com/uufornunu/26-wuren-chenyueyi
+一、基础作业
 1）目录
-hw_ros_ws/ 
-├── build/ 
-├── devel/
-│   ├── lib/ 
-│   │   └── package2/      # 节点可执行文件 
-│   │       ├── turtle_controller_node  # C++控制器 
-│   │       └── turtle_vel_pub.py        # Python发布者 
-│   └── setup.bash         # 环境激活脚本 
-└── src/ 
-    └── package2/          # 功能包主目录 
-        ├── config/  
-        │   └── params.yaml               # 速度阈值配置  
-        ├── launch/  
-        │   └── control.launch            # 启动文件  
-        ├── msg/  
-        │   └── TurtleVel.msg             # 自定义消息  
-        ├── scripts/  
-        │   └── turtle_vel_pub.py         # 速度发布节点源码  
-        ├── src/  
-        │   └── turtle_controller.cpp     # 运动控制器源码  
-        └── package.xml                   # 包依赖声明
+hw_ros_ws
+├── build/               # ROS 编译生成文件
+├── devel/               # 开发环境文件
+│   ├── lib/package2/
+│   │   ├── cone_counter.py       # 锥桶统计脚本 [关键文件]
+│   │   └── turtle_vel_pub.py     # 速度发布脚本
+│   └── share/           # 消息和配置
+│       ├── fsd_common_msgs/msg/  # 所有自定义消息定义
+│       └── package2/             # 项目配置
+└── src/                 # 源代码核心
+    ├── fsd_common_msgs/          # 项目1: 消息定义
+    │   ├── bag/ 
+    │   │   └── lidar_cone_side_&_slam_state.orig.bag  # 传感器数据包 
+    │   └── msg/                  # 消息文件
+    │       ├── Cone.msg          # 锥桶定义
+    │       ├── ConeDetections.msg # 锥桶检测组
+    │       └── ...（共24个.msg文件）
+    │
+    └── package2/                 # 项目2: 功能包
+        ├── launch/control.launch # 启动配置
+        ├── msg/TurtleVel.msg     # 自定义速度消息
+        ├── scripts/
+        │   ├── cone_counter.py   # 锥桶统计脚本（需修改）[关键文件]
+        │   └── turtle_vel_pub.py  # 速度发布脚本
+        ├── src/turtle_controller.cpp  # C++控制节点
+        └── result/               # 输出结果
+            ├── screenshots/      # 运行时截图
+            └── videos/           # 录屏文件
 
 2）启动流程
 cd ~/hw_ros_ws 
@@ -62,5 +70,22 @@ roslaunch package2 control.launch
  
  注意事项：检查环境是否未激活或路径是否正确、检查YAML加载和路径、检查脚本无执行权限、要能模块化验证
 	
+二、进阶作业
+1）启动流程
+cd ~/hw_ros_ws
+catkin_make
+source devel/setup.bash
+roscore
+rosrun package2 cone_counter.py
+rviz
 
 
+2)作业完成思路
+配置环境- 确认锥桶的消息定义在Cone.msg
+在初级任务工作空间下,放入所给的包,然后就编写脚本
+脚本县初始化节点,订阅和发布话题,然后统计颜色(这里有参考了别人的代码)
+rosbag play Bag 文件,再rosrun cone_counter.py 
+启动RViz
+3)遇到的困难
+首先是因为不熟悉和目录复杂,所以脚本的路径上总是出错,后面用绝对路径和每次运行前会检查.
+其实还遇到了很多很多问题,消息倒入不成功,Rviz不实现,不能读取VBag文件等,后面查资料和文同学都已经解决了.
