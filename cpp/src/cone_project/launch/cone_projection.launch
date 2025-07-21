@@ -1,0 +1,10 @@
+<launch>
+    <!-- 启动锥桶投影节点 -->
+    <node name="cone_projection_node" pkg="cone_project" type="cone_projection_node" output="screen">
+       
+    </node>
+    
+    <!-- 启动rviz  可视化投影结果 -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cone_project)/config/rviz.rviz" />
+</launch>
+    

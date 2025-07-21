@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package format="2">
+  <!-- 基础信息 -->
+  <name>pointcloud_processing</name>
+  <version>1.0.0</version>
+  <description>
+    拼接多雷达点云并调整强度范围：订阅/carla/ego_vehicle/lidar_mid、/lidar_up、/lidar_down，
+    拼接后发布到/lidar_points，强度范围映射至1~256，frame_id设为lidar
+  </description>
+  
+  <!-- 维护信息 -->
+  <maintainer email="your-email@example.com">Your Name</maintainer>
+  <license>Apache 2.0</license>
+
+  <!-- 编译依赖 -->
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <!-- 核心依赖 -->
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>pcl_conversions</depend>
+  <depend>pcl_ros</depend>
+  <depend>message_filters</depend>
+  
+  <!-- PCL 依赖统一处理 -->
+  <build_depend>libpcl-dev</build_depend>
+  <exec_depend>libpcl-dev</exec_depend>
+  
+  <!-- 可选文档生成 -->
+  <build_depend>rosdoc_lite</build_depend>
+  
+  <export>
+    <!-- 声明为ROS包 -->
+    <build_type>catkin</build_type>
+  </export>
+</package>
