@@ -1,8 +1,0 @@
-prefix=/home/chenyueyi/hw_ros_ws/devel
-
-Name: package2
-Description: Description of package2
-Version: 0.0.0
-Cflags: -I/home/chenyueyi/hw_ros_ws/devel/include
-Libs: -L${prefix}/lib 
-Requires: roscpp rospy std_msgs message_runtime

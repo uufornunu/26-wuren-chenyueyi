@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- 1. 直接加载URDF -->
+  <param name="cone_description" 
+         textfile="$(find cone_sim)/urdf/cone.urdf" />
+
+  <!-- 2. 启动Gazebo -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+  </include>
+
+  <!-- 3. 生成锥桶 -->
+  <node name="spawn_cone" pkg="gazebo_ros" type="spawn_model" 
+        args="-urdf -model traffic_cone -param cone_description -x 0 -y 0 -z 0.35" />
+</launch>

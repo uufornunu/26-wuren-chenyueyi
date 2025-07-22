@@ -152,7 +152,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/chenyueyi/hw_ros_ws/build/gtest/cmake_install.cmake")
   include("/home/chenyueyi/hw_ros_ws/build/fsd_common_msgs/cmake_install.cmake")
-  include("/home/chenyueyi/hw_ros_ws/build/package2/cmake_install.cmake")
+  include("/home/chenyueyi/hw_ros_ws/build/cone_projection/cmake_install.cmake")
 
 endif()
 

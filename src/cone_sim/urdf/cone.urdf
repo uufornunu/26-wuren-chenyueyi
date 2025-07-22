@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot name="traffic_cone">
+  <!-- 视觉与物理属性 -->
+  <link name="base_link">
+    <!-- 锥体部分 -->
+    <visual>
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.3"/>  <!-- 半径0.05m, 高度0.3m -->
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>  <!-- RGBA红色 -->
+      </material>
+    </visual>
+    
+    <!-- 底座部分 -->
+    <visual>
+      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.08" length="0.05"/>  <!-- 半径0.08m, 高度0.05m -->
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <!-- 碰撞模型 -->
+    <collision>
+      <geometry>
+        <cylinder radius="0.07" length="0.35"/>  <!-- 防穿透设计 -->
+      </geometry>
+    </collision>
+
+    <!-- 惯性矩阵（防仿真崩溃） -->
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <!-- Gazebo颜色覆盖 -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Red</material> 
+  </gazebo>
+</robot>

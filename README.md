@@ -23,20 +23,19 @@ hw_ros_ws
         ├── launch/control.launch # 启动配置
         ├── msg/TurtleVel.msg     # 自定义速度消息
         ├── scripts/
-        │   ├── cone_counter.py   # 锥桶统计脚本（需修改）[关键文件]
-        │   └── turtle_vel_pub.py  # 速度发布脚本
+        │   ├── cone_counter.py   # 锥桶统计脚本
+        │   └── turtle_vel_pub.py  # 乌龟速度发布脚本
         ├── src/turtle_controller.cpp  # C++控制节点
         └── result/               # 输出结果
-            ├── screenshots/      # 运行时截图
-            └── videos/           # 录屏文件
-
+            ├── screenshots/      # 截图
+            └── videos/           # 录屏
 2）启动流程
 cd ~/hw_ros_ws 
 catkin_make              # 生成可执行文件 
 source devel/setup.bash  # 激活环境（不要再忘记了T T）
 roslaunch package2 control.launch
 
-3)作业完成思路
+3)作业1完成思路
 1.创建工作空间和包——创建目录——初始化包
 2.​​定义消息类型​——创建 msg/TurtleVel.msg
 3.参数分离配置——创建 config/params.yaml
@@ -77,15 +76,23 @@ catkin_make
 source devel/setup.bash
 roscore
 rosrun package2 cone_counter.py
+~/hw_ros_ws/src/fsd_common_msgs/bag$ rosbag play "lidar_cone_side_&_slam_state.bag"
+
 rviz
 
 
-2)作业完成思路
+2)作业2完成思路
 配置环境- 确认锥桶的消息定义在Cone.msg
 在初级任务工作空间下,放入所给的包,然后就编写脚本
 脚本县初始化节点,订阅和发布话题,然后统计颜色(这里有参考了别人的代码)
 rosbag play Bag 文件,再rosrun cone_counter.py 
 启动RViz
 3)遇到的困难
-首先是因为不熟悉和目录复杂,所以脚本的路径上总是出错,后面用绝对路径和每次运行前会检查.
-其实还遇到了很多很多问题,消息倒入不成功,Rviz不实现,不能读取VBag文件等,后面查资料和文同学都已经解决了.
+首先是因为不熟悉和目录复杂,所以脚本的路径上总是出错,后面用绝对路径和每次运行前会检查.然后是编写代码的时候没有订阅的话题名和bag中不一致，后面该改过来，节点和话题连上了就没问题了
+其实还遇到了很多很多问题,消息倒入不成功,Rviz没有配好不能可视化之类的,不能读取Bag文件等,后面查资料和问同学都已经解决了.
+
+三、选做作业可视化锥桶
+启动 roslaunch cone_sim spawn_cone.launch
+完成思路，参考了网络的结构和参数，然后按模板编译代码
+
+遇到的问题，因为关节的连接没有正确定义，后面用urdf_to_graphiz生成结构图，看到没有连上，修改之后就没有问题了。

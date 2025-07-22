@@ -1,2 +1,2 @@
-fsd_common_msgs:package2
--DCATKIN_DEVEL_PREFIX=/home/chenyueyi/hw_ros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/chenyueyi/hw_ros_ws/install -G Unix Makefiles
+cone_projection:fsd_common_msgs
+-DCATKIN_DEVEL_PREFIX=/home/chenyueyi/hw_ros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/chenyueyi/hw_ros_ws/install -DCATKIN_WHITELIST_PACKAGES=cone_projection;fsd_common_msgs -G Unix Makefiles

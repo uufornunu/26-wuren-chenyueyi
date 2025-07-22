@@ -67,7 +67,7 @@ include fsd_common_msgs/CMakeFiles/_fsd_common_msgs_generate_messages_check_deps
 include fsd_common_msgs/CMakeFiles/_fsd_common_msgs_generate_messages_check_deps_ConeDetectionsDbscan.dir/progress.make
 
 fsd_common_msgs/CMakeFiles/_fsd_common_msgs_generate_messages_check_deps_ConeDetectionsDbscan:
-	cd /home/chenyueyi/hw_ros_ws/build/fsd_common_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py fsd_common_msgs /home/chenyueyi/hw_ros_ws/src/fsd_common_msgs/msg/ConeDetectionsDbscan.msg geometry_msgs/Point:std_msgs/Header:std_msgs/Float32:std_msgs/String:fsd_common_msgs/ConeDbscan
+	cd /home/chenyueyi/hw_ros_ws/build/fsd_common_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py fsd_common_msgs /home/chenyueyi/hw_ros_ws/src/fsd_common_msgs/msg/ConeDetectionsDbscan.msg fsd_common_msgs/ConeDbscan:std_msgs/String:std_msgs/Float32:std_msgs/Header:geometry_msgs/Point
 
 fsd_common_msgs/CMakeFiles/_fsd_common_msgs_generate_messages_check_deps_ConeDetectionsDbscan.dir/codegen:
 .PHONY : fsd_common_msgs/CMakeFiles/_fsd_common_msgs_generate_messages_check_deps_ConeDetectionsDbscan.dir/codegen
